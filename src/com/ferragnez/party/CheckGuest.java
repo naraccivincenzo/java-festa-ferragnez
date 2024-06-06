@@ -5,33 +5,38 @@ import java.util.Scanner;
 public class CheckGuest {
 
 	public static void main(String[] args) {
-		
-		String [] invited = { "Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-Ax", "Francesco Totti", "Ilary Blasi", "Bebe Vio", "Luis", "Pardis Zarei", "Martina Maccherone", "Rachel Zeilic"};
-		
-		Scanner input = new Scanner (System.in);
-		
+
+		String[] guest = { "Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-Ax", "Francesco Totti", "Ilary Blasi",
+				"Bebe Vio", "Luis", "Pardis Zarei", "Martina Maccherone", "Rachel Zeilic" };
+
+		Scanner input = new Scanner(System.in);
+
 		System.out.println("Inserisci il tuo nome per scoprire se sei invitato");
 		String legalName = input.nextLine();
-		
+
 		input.close();
-		
-		for (int i=0; i<invited.length; i++) {
-			if (legalName.toLowerCase().equals(invited[i].toLowerCase())) {
-				System.out.println(invited[i]);
-				System.out.println("Complimenti parteciperai alla festa di divorzio");
-				break;
+
+		boolean invited = false;
+
+		/*
+		 * for (int i = 0; i < guest.length; i++) { if
+		 * (legalName.equalsIgnoreCase(guest[i])) { invited = true; } }
+		 */
+
+		int i = 0;
+		while (i < guest.length) {
+			if (legalName.equalsIgnoreCase(guest[i])) {
+				invited = true;
 			}
-				else {
-				System.out.println("Mi dispiace ma per te niente Pandoro");
-				break;
-			}
+			i++;
 		}
-		
-		
-		
-		
-		
-		
+
+		if (invited == true) {
+			System.out.println("Sei invitato alla festa di divorzio");
+		} else {
+			System.out.println("Per te niente pandoro");
+		}
+
 	}
 
 }
