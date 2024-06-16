@@ -40,7 +40,7 @@ public class CheckGuest {
 		}
 
 		//display if invited or not
-		if (invited == true) {
+		if (invited) {
 			System.out.println("Sei invitato alla festa di divorzio");
 		} else {
 			System.out.println("Per te niente pandoro");
